@@ -3,7 +3,7 @@
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
   <h1>Selamat Datang</h1>
-  <p>Silahkan gunakan menu di atas untuk mengelola data.</p>
+  <p>Silahkan gunakan menu di atas untuk mengelola data BMT EL Sejahtera.</p>
   <p>
     <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
   </p>
