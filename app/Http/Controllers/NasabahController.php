@@ -29,4 +29,19 @@ class NasabahController extends Controller
       alert()->overlay('Sipp..', 'Tambah Data Nasabah Berhasil!', 'success');
       return redirect('nasabah');
     }
+
+    public function edit($id)
+    {
+      $nasabah = Nasabah::find($id);
+      return view('nasabah.edit', compact('nasabah'));
+    }
+
+    public function update(NasabahRequest $request, $id)
+    {
+      $data=$request->all();
+      $nasabah = Nasabah::find($id);
+      $nasabah->update($data);
+      alert()->overlay('Selamat', 'Ubah Data Nasabah Berhasil!', 'success');
+      return redirect('nasabah');
+    }
 }

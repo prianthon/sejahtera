@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  {!! link_to('nasabah/create','Tambah Data',["class"=>"btn btn-danger btn-sm"]) !!}
+  {!! link_to('nasabah/create','Tambah Data',["class"=>"btn btn-primary btn-sm"]) !!}
   <br><br>
   <table class="table table-striped">
     <tr>
@@ -16,7 +16,13 @@
       <td>{{ $n->no_rekening }}</td>
       <td>{{ $n->nama_lengkap }}</td>
       <td>{{ $n->alamat }}</td>
-      <td></td>
+      <td>
+        {!! Form::open(array('method'=>'delete','url'=>'nasabah/'.$n->id)) !!}
+        {!! Form::hidden('_delete','DELETE') !!}
+        {!! link_to('nasabah/'.$n->id.'/edit','Ubah',['class'=>'btn btn-warning btn-sm']) !!}
+        {!! Form::submit('Hapus',['class'=>'btn btn-danger btn-sm']) !!}
+        {!! Form::close() !!}
+      </td>
     </tr>
     @endforeach
   </table>
