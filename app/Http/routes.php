@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('dashboard', function () {
     return view('dashboard');
 });
@@ -30,7 +31,9 @@ Route::resource('nasabah','NasabahController');
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+ 
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/home', 'HomeController@index');
 });
