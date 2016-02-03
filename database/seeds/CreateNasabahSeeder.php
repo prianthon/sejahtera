@@ -11,7 +11,7 @@ class CreateNasabahSeeder extends Seeder
      */
     public function run()
     {
-      // kosongkan table libkecamatan
+    // kosongkan table libkecamatan
     DB::table('nasabahs')->delete();
 
     // buat data berupa array untuk diinput ke database

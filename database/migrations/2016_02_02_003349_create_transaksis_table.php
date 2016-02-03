@@ -14,6 +14,10 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('nasabah_id');
+            $table->integer('total');
+            $table->enum('jenis_transaksi',array('kredit','debit'));
+            $table->integer('saldo');
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class CreateTableNasabahs extends Migration
             $table->string('no_rekening',15);
             $table->text('alamat');
             $table->text('foto');
+            $table->integer('saldo_terakhir');
             $table->timestamps();
         });
     }
