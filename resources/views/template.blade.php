@@ -48,7 +48,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Beranda</a></li>
-            <li><a href="#about">Nasabah</a></li>
+            <li><a href="{{ url('nasabah') }}">Nasabah</a></li>
             <li><a href="#about">Transaksi</a></li>
             <li><a href="#about">Laporan</a></li>
           </ul>
