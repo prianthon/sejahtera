@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Nasabah;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests\NasabahRequest;
 
 class NasabahController extends Controller
@@ -31,6 +32,9 @@ class NasabahController extends Controller
 
     public function store(NasabahRequest $request)
     {
+      $filename = Input::file('foto')->getClientOriginalName();
+      echo $filename;
+      die;
       $data=$request->all();
       Nasabah::create($data);
       alert()->overlay('Sipp..', 'Tambah Data Nasabah Berhasil!', 'success');
