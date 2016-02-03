@@ -37,6 +37,12 @@ class NasabahController extends Controller
       return redirect('nasabah');
     }
 
+    public function show($id)
+    {
+      $nasabah = Nasabah::find($id);
+      return view('nasabah.show', compact('nasabah'));
+    }
+
     public function edit($id)
     {
       $nasabah = Nasabah::find($id);

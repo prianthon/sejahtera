@@ -20,9 +20,10 @@
       <td>{{ $n->no_rekening }}</td>
       <td>{{ $n->nama_lengkap }}</td>
       <td>{{ $n->alamat }}</td>
-      <td width="150">
+      <td width="200">
         {!! Form::open(array('method'=>'delete','url'=>'nasabah/'.$n->id)) !!}
         {!! Form::hidden('_delete','DELETE') !!}
+        {!! link_to('nasabah/'.$n->id,'Detail',['class'=>'btn btn-info btn-sm']) !!}
         {!! link_to('nasabah/'.$n->id.'/edit','Ubah',['class'=>'btn btn-warning btn-sm']) !!}
         {!! Form::submit('Hapus',['class'=>'btn btn-danger btn-sm']) !!}
         {!! Form::close() !!}
