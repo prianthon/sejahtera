@@ -65,7 +65,7 @@
       @yield('content')
 
     </div> <!-- /container -->
-
+    @include('Alerts::show')
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -75,6 +75,5 @@
     <script src="{{ asset('bs/js/bootstrap.min.js') }}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ asset('bs/js/ie10-viewport-bug-workaround.js') }}"></script>
-    @include('Alerts::show')
   </body>
 </html>

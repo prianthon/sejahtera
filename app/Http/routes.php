@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('dashboard', function () {
     return view('dashboard');
 });
+Route::post('nasabah/cari','NasabahController@cari');
 Route::resource('nasabah','NasabahController');
 
 /*

@@ -17,6 +17,13 @@ class NasabahController extends Controller
       return view('nasabah.index', compact('nasabah'));
     }
 
+    public function cari(Request $request)
+    {
+      $keyword = $request['keyword'];
+      $nasabah = Nasabah::where('no_rekening','=',$keyword)->paginate(5) ;
+      return view('nasabah.index', compact('nasabah'));
+    }
+
     public function create()
     {
       return view('nasabah.create');
@@ -42,6 +49,14 @@ class NasabahController extends Controller
       $nasabah = Nasabah::find($id);
       $nasabah->update($data);
       alert()->overlay('Selamat', 'Ubah Data Nasabah Berhasil!', 'success');
+      return redirect('nasabah');
+    }
+
+    public function destroy($id)
+    {
+      $nasabah = Nasabah::find($id);
+      $nasabah->delete();
+      alert()->overlay('Selamat', 'Hapus Data Nasabah Berhasil!', 'success');
       return redirect('nasabah');
     }
 }
