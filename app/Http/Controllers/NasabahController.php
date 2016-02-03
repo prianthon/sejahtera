@@ -12,6 +12,11 @@ use App\Http\Requests\NasabahRequest;
 
 class NasabahController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
       $nasabah = Nasabah::paginate(5);

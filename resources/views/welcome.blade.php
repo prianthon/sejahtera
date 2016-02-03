@@ -1,14 +1,18 @@
-@extends('layouts.app')
+@extends('template')
+
+@section('title')
+  <title>Selamat datang</title>
+@endsection
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
+                <div class="panel-heading">Selamat datang</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    Aplikasi BMT EL Sejahtera makin siap.
                 </div>
             </div>
         </div>
