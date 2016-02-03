@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Nasabah;
+use App\Http\Requests\NasabahRequest;
 
 class NasabahController extends Controller
 {
@@ -19,5 +20,13 @@ class NasabahController extends Controller
     public function create()
     {
       return view('nasabah.create');
+    }
+
+    public function store(NasabahRequest $request)
+    {
+      $data=$request->all();
+      Nasabah::create($data);
+      alert()->overlay('Sipp..', 'Tambah Data Nasabah Berhasil!', 'success');
+      return redirect('nasabah');
     }
 }

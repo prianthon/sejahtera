@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
   {!! link_to('nasabah/create','Tambah Data',["class"=>"btn btn-danger btn-sm"]) !!}
   <br><br>
   <table class="table table-striped">
@@ -21,4 +20,5 @@
     </tr>
     @endforeach
   </table>
+  {!! $nasabah->render() !!}
 @endsection

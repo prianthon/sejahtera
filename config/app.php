@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //html
         Collective\Html\HtmlServiceProvider::class,
+        //alert
+        Socieboy\Alerts\AlertServiceProvider::class,
 
         /*
          * Application Service Providers...
