@@ -1,5 +1,9 @@
 @extends('template')
 
+@section('title')
+  <title>Daftar</title>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
