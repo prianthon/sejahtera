@@ -11,5 +11,5 @@ class Nasabah extends Model
 
   # MASS ASSIGNMENT
   # Untuk membatasi attribut yang boleh di isi (Untuk keamanan)
-  protected $fillable = ['nama_lengkap','no_rekening','alamat'];
+  protected $fillable = ['nama_lengkap','no_rekening','alamat','foto'];
 }

@@ -33,9 +33,13 @@ class NasabahController extends Controller
     public function store(NasabahRequest $request)
     {
       $filename = Input::file('foto')->getClientOriginalName();
-      echo $filename;
-      die;
+      Input::file('foto')->move(public_path().'/foto/',$filename);
       $data=$request->all();
+      $data=array(
+        'nama_lengkap'=>Input::get('nama_lengkap'),
+        'no_rekening'=>Input::get('no_rekening'),
+        'alamat'=>Input::get('alamat'),
+        'foto'=>$filename);
       Nasabah::create($data);
       alert()->overlay('Sipp..', 'Tambah Data Nasabah Berhasil!', 'success');
       return redirect('nasabah');

@@ -17,6 +17,7 @@ class CreateTableNasabahs extends Migration
             $table->string('nama_lengkap',100);
             $table->string('no_rekening',15);
             $table->text('alamat');
+            $table->text('foto');
             $table->timestamps();
         });
     }
