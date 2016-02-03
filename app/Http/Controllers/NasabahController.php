@@ -15,4 +15,9 @@ class NasabahController extends Controller
       $nasabah = Nasabah::paginate(5);
       return view('nasabah.index', compact('nasabah'));
     }
+
+    public function create()
+    {
+      return view('nasabah.create');
+    }
 }

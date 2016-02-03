@@ -1,8 +1,13 @@
 @extends('template')
+
+@section('title')
+  <title>Nasabah</title>
+@endsection
+
 @section('content')
 
-  {!! link_to('create','Tambah Data',["class"=>"btn btn-danger btn-sm"]) !!}
-
+  {!! link_to('nasabah/create','Tambah Data',["class"=>"btn btn-danger btn-sm"]) !!}
+  <br><br>
   <table class="table table-striped">
     <tr>
       <th>No Rekening</th><th>Nama Lengkap</th><th>Alamat</th><th>Aksi</th>

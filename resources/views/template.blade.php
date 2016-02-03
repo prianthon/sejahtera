@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    @yield('title')
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bs/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -47,7 +47,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Beranda</a></li>
+            <li class="active"><a href="{{ url('dashboard') }}">Beranda</a></li>
             <li><a href="{{ url('nasabah') }}">Nasabah</a></li>
             <li><a href="#about">Transaksi</a></li>
             <li><a href="#about">Laporan</a></li>

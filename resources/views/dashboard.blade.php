@@ -1,4 +1,9 @@
 @extends('template')
+
+@section('title')
+  <title>Dashboard</title>
+@endsection
+
 @section('content')
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
