@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 class LaporanController extends Controller
 {
+    // export pdf
     public function pdf()
     {
       $pdf = new \fpdf\FPDF();
@@ -39,6 +40,7 @@ class LaporanController extends Controller
       $pdf->Output();
     }
 
+    //export excel
     public function excel()
     {
       $transaksi = \DB::table('transaksis')
