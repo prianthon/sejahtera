@@ -50,7 +50,7 @@
             <span class="icon-bar"></span>
           </button>
           <!--alogo text-->
-          <a class="navbar-brand" href="{{ url('/') }}">BMT EL Sejahtera</a>
+          <a class="navbar-brand" href="{{ url('/') }}">BMT EL Sejahtera.</a>
           <!--zlogo text-->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
