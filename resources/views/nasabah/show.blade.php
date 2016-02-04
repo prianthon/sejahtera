@@ -17,6 +17,7 @@
     <tr><td width="120">No Rekening</td><td>{{ $nasabah->no_rekening }}</td><td rowspan="3"><img src="{{ asset('foto/'.$nasabah->foto) }}" width="100"></td></tr>
     <tr><td>Total Transaksi</td><td>{{ $nasabah->nama_lengkap }}</td></tr>
     <tr><td>Alamat</td><td>{{ $nasabah->alamat }}</td></tr>
+    <tr><td>Saldo</td><td colspan="2">{{ $nasabah->saldo_terakhir }}</td></tr>
   </table>
 </div>
 <div class="col-sm-6">
@@ -30,6 +31,12 @@
   </table>
   {!! Form::close() !!}
 </div>
+<?php
+  if(Session::has('message'))
+  {
+    echo "<p>".Session::get('message')."</p>";
+  }
+?>
 <div class="col-sm-12">
   <table class="table table-bordered">
     <tr><th>Tanggal</th><th>Jenis Transaksi</th><th>Jumlah</th><th>Operator</th></tr>

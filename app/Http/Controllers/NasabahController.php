@@ -10,6 +10,7 @@ use App\Nasabah;
 use App\Transaksi;
 use App\User;
 use Auth;
+use Session;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\NasabahRequest;
 
@@ -88,11 +89,36 @@ class NasabahController extends Controller
 
     public function transaksi(Request $request)
     {
+      $jenis = $request->jenis_transaksi;
+      $nasabah = Nasabah::find($request->nasabah_id);
+      $saldo = $nasabah->saldo_terakhir;
+      if($jenis=='debit')
+      {
+        //tambah saldo
+        $newSaldo=($saldo+$request->total);
+        $nasabah->saldo_terakhir = $newSaldo;
+        $nasabah->save();
+        $pesan='Berhasil Debit';
+      }else{
+        //check saldo cukup atau tidak
+        if ($saldo<$request->total)
+        {
+          //redirect saldo kurang
+          $pesan='Maaf saldo tidak mencukupi'
+        }else{
+          //lakukan pengurangan saldo
+          $newSaldo=($saldo-$request->total);
+          $nasabah->saldo_terakhir = $newSaldo;
+          $nasabah->save();
+          $pesan='Berhasil Kredit';
+        }
+      }
+      Session::flash('message',$pesan);
+      //$data = $request->all();
+      //Transaksi::create($data);
       //Transaksi::create($request->all());
-      //$transaksi = New transaksi($request->all());
-      //Auth::user()->transaksi()->save($transaksi);
-      $data = $request->all();
-      Transaksi::create($data);
+      $transaksi = New transaksi($request->all());
+      Auth::user()->transaksi()->save($transaksi);
       return redirect('nasabah/'.$request->nasabah_id);
     }
 }
