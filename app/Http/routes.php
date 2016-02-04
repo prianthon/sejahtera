@@ -15,4 +15,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('nasabah','NasabahController');
     //page laporan
     Route::get('laporan/pdf','LaporanController@pdf');
+    Route::get('laporan/excel','LaporanController@excel');
 });

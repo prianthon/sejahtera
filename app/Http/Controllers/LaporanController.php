@@ -41,6 +41,25 @@ class LaporanController extends Controller
 
     public function excel()
     {
-
+      $transaksi = \DB::table('transaksis')
+                  ->join('users','users.id','=','transaksis.user_id')
+                  ->join('nasabahs','nasabahs.id','=','transaksis.nasabah_id')
+                  ->get();
+      \Excel::create('Data Transaksi',function($excel) use ($transaksi)
+      {
+        $excel->sheet('data transaksi',function($sheet) use ($transaksi)
+        {
+          $row=1;
+          $sheet->row($row,array(
+            'No','Tanggal','No. Rekening','Nama','Jumlah','Operator'));
+          $no=1;
+          foreach ($transaksi as $t)
+          {
+            $sheet->row(++$row,array(
+              $no,tgl_id($t->created_at),$t->no_rekening,$t->nama_lengkap,$t->total,$t->name));
+            $no++;
+          }
+        });
+      })->export('xls');
     }
 }
