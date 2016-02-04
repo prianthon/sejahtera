@@ -34,7 +34,7 @@
   <table class="table table-bordered">
     <tr><th>Tanggal</th><th>Jenis Transaksi</th><th>Jumlah</th><th>Operator</th></tr>
     @foreach($transaksi as $t)
-    <tr><td>{{ $t->created_at }}</td><td>{{ $t->jenis_transaksi }}</td><td>{{ $t->total }}</td><td>{{ $t->name }}</td></tr>
+    <tr><td>{{ tgl_id($t->created_at) }}</td><td>{{ $t->jenis_transaksi }}</td><td>{{ $t->total }}</td><td>{{ $t->name }}</td></tr>
     @endforeach
   </table>
 </div>
