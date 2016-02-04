@@ -10,5 +10,6 @@ Route::group(['middleware' => 'web'], function () {
         return view('dashboard.index');
     });
     Route::post('nasabah/cari','NasabahController@cari');
+    Route::post('nasabah/transaksi','NasabahController@transaksi'); 
     Route::resource('nasabah','NasabahController');
 });

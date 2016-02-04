@@ -20,11 +20,22 @@
   </table>
 </div>
 <div class="col-sm-6">
+  {!! Form::open(array('url'=>'nasabah/transaksi')) !!}
+  {!! Form::hidden('nasabah_id',$nasabah->id)  !!}
   <table class="table table-bordered">
     <tr><td colspan="2">Transaksi</td></tr>
     <tr><td>Total Transaksi</td><td>{!! Form::text('total',null,['class'=>'form-control']) !!}</td></tr>
     <tr><td>Jenis Transaksi</td><td>{!! Form::select('jenis_transaksi',array('kredit'=>'KREDIT','debit'=>'DEBIT'),null,['class'=>'form-control']) !!}</td></tr>
     <tr><td colspan="2">{!! Form::submit('SIMPAN',['class'=>'btn btn-danger btn-sm']) !!}</td></tr>
+  </table>
+  {!! Form::close() !!}
+</div>
+<div class="col-sm-12">
+  <table class="table table-bordered">
+    <tr><th>Tanggal</th><th>Jenis Transaksi</th><th>Jumlah</th><th>Operator</th></tr>
+    @foreach($transaksi as $t)
+    <tr><td>{{ $t->created_at }}</td><td>{{ $t->jenis_transaksi }}</td><td>{{ $t->total }}</td><td>{{ $t->name }}</td></tr>
+    @endforeach
   </table>
 </div>
 @endsection

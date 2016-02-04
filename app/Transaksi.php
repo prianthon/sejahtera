@@ -17,4 +17,9 @@ class Transaksi extends Model
   {
     return $this->belongsTo('App\Nasabah','nasabah_id');
   }
+
+  public function user()
+  {
+    return $this->belongsTo('App\User','user_id');
+  }
 }

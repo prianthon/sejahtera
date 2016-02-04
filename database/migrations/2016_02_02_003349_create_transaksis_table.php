@@ -18,6 +18,7 @@ class CreateTransaksisTable extends Migration
             $table->integer('total');
             $table->enum('jenis_transaksi',array('kredit','debit'));
             $table->integer('saldo');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
