@@ -12,7 +12,8 @@
                 <div class="panel-heading">Selamat datang</div>
 
                 <div class="panel-body">
-                    Aplikasi BMT EL Sejahtera makin siap.
+                    Aplikasi BMT EL Sejahtera makin siap.<br><br>
+                    <p><img src="{{ asset('img/logo-bmt-el-sejahtera.png')}}"></p>
                 </div>
             </div>
         </div>
