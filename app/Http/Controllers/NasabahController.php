@@ -87,6 +87,12 @@ class NasabahController extends Controller
       return redirect('nasabah');
     }
 
+    function prosesTransaksi()
+    {
+      $transaksi = New transaksi($request->all());
+      Auth::user()->transaksi()->save($transaksi);
+    }
+
     public function transaksi(Request $request)
     {
       $jenis = $request->jenis_transaksi;
@@ -99,26 +105,30 @@ class NasabahController extends Controller
         $nasabah->saldo_terakhir = $newSaldo;
         $nasabah->save();
         $pesan='Berhasil Debit';
+        $transaksi = New transaksi($request->all());
+        Auth::user()->transaksi()->save($transaksi);
       }else{
         //check saldo cukup atau tidak
-        if ($saldo<$request->total)
+        if($saldo<$request->total)
         {
           //redirect saldo kurang
-          $pesan='Maaf saldo tidak mencukupi'
+          $pesan='Maaf saldo tidak mencukupi';
         }else{
           //lakukan pengurangan saldo
           $newSaldo=($saldo-$request->total);
           $nasabah->saldo_terakhir = $newSaldo;
           $nasabah->save();
           $pesan='Berhasil Kredit';
+          $transaksi = New transaksi($request->all());
+          Auth::user()->transaksi()->save($transaksi);
         }
       }
       Session::flash('message',$pesan);
       //$data = $request->all();
       //Transaksi::create($data);
       //Transaksi::create($request->all());
-      $transaksi = New transaksi($request->all());
-      Auth::user()->transaksi()->save($transaksi);
+      //$transaksi = New transaksi($request->all());
+      //Auth::user()->transaksi()->save($transaksi);
       return redirect('nasabah/'.$request->nasabah_id);
     }
 }

@@ -30,13 +30,13 @@
     <tr><td colspan="2">{!! Form::submit('SIMPAN',['class'=>'btn btn-danger btn-sm']) !!}</td></tr>
   </table>
   {!! Form::close() !!}
+  <?php
+    if(Session::has('message'))
+    {
+      echo "<p>".Session::get('message')."</p>";
+    }
+  ?>
 </div>
-<?php
-  if(Session::has('message'))
-  {
-    echo "<p>".Session::get('message')."</p>";
-  }
-?>
 <div class="col-sm-12">
   <table class="table table-bordered">
     <tr><th>Tanggal</th><th>Jenis Transaksi</th><th>Jumlah</th><th>Operator</th></tr>
