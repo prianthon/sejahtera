@@ -11,6 +11,8 @@
     @yield('title')
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bs/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!--swit-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('sa/css/sweetalert.css') }}">
     <!-- Fonts -->
     <link href="{{ asset('fa/css/font-awesome.min.css') }}" rel='stylesheet' type='text/css'>
     <link href="{{ asset('bs/css/fontgoogleapis.css') }}" rel='stylesheet' type='text/css'>
@@ -94,6 +96,7 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="{{ asset('bs/js/214/jquery.min.js') }}"></script>
     <script src="{{ asset('bs/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('sa/js/sweetalert.js') }}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ asset('bs/js/ie10-viewport-bug-workaround.js') }}"></script>
   </body>
